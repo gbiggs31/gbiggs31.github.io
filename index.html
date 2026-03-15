@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>George Biggs — Data Scientist</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --border: #2e3352;
+      --accent: #6c8eff;
+      --accent2: #a78bfa;
+      --text: #e8eaf6;
+      --muted: #8b90a8;
+      --tag-bg: #1e2540;
+      --tag-text: #8eaaff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(15, 17, 23, 0.8);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    nav .logo {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    nav .logo span { color: var(--accent); }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: var(--text); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(108, 142, 255, 0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(167, 139, 250, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-inner { max-width: 680px; position: relative; }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(108, 142, 255, 0.35);
+      border-radius: 999px;
+      padding: 0.3rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: #5577ee; transform: translateY(-1px); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+    /* ── SECTIONS ── */
+    section { padding: 5rem 2rem; }
+
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 520px;
+      margin-bottom: 3rem;
+    }
+
+    /* ── PROJECTS GRID ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .card:hover {
+      border-color: rgba(108, 142, 255, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .card:hover::after { opacity: 1; }
+
+    .card-icon {
+      font-size: 1.75rem;
+      line-height: 1;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .card-meta { flex: 1; }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 0.2rem;
+    }
+
+    .card-type {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border-radius: 5px;
+      padding: 0.2rem 0.55rem;
+      letter-spacing: 0.02em;
+    }
+
+    .card-links {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .link-btn-primary {
+      background: rgba(108, 142, 255, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(108, 142, 255, 0.25);
+    }
+
+    .link-btn-primary:hover {
+      background: rgba(108, 142, 255, 0.25);
+      border-color: var(--accent);
+    }
+
+    .link-btn-secondary {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    .link-btn-secondary:hover { color: var(--text); border-color: var(--muted); }
+
+    /* ── ABOUT ── */
+    #about { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (max-width: 680px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    .about-text p { color: var(--muted); margin-bottom: 1rem; font-size: 1rem; }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-chip {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.35rem 0.85rem;
+      border-radius: 6px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    /* ── CONTACT ── */
+    .contact-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── SVG ICONS (inline) ── */
+    .icon { width: 14px; height: 14px; display: inline-block; vertical-align: middle; fill: currentColor; }
+
+    @media (max-width: 600px) {
+      nav ul { gap: 1.2rem; }
+      nav ul a { font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">GB<span>.</span></a>
+  <ul>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-badge">Data Scientist</div>
+    <h1>Hi, I'm <span>George Biggs</span></h1>
+    <p>I like to mess around building data-driven tools and applications. All views my own. Not financial advice.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label">Work</div>
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">A selection of personal projects spanning finance, LLMs, data analysis, and web apps.</p>
+
+    <div class="projects-grid">
+
+      <!-- Reverse Mortgage UK -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🏡</div>
+          <div class="card-meta">
+            <div class="card-title">Home Affordability Calculator</div>
+            <div class="card-type">Interactive Tool · UK</div>
+          </div>
+        </div>
+        <p class="card-desc">
+          An interactive calculator that takes your income and works out the maximum home value you could afford to buy. Built for the UK market.
+        </p>
+        <div class="card-tags">
+          <span class="tag">Finance</span>
+          <span class="tag">Interactive</span>
+          <span class="tag">UK</span>
+        </div>
+        <div class="card-links">
+          <a href="https://claude.ai/public/artifacts/eada6160-615e-4038-b1b5-1854b8d9678e" target="_blank" rel="noopener" class="link-btn link-btn-primary">
+            <svg class="icon" viewBox="0 0 16 16"><path d="M8 0a8 8 0 110 16A8 8 0 018 0zm0 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zm1 3.25a.75.75 0 01.75.75v5a.75.75 0 01-1.5 0v-5A.75.75 0 019 4.75zm-2 0a.75.75 0 01.75.75v5a.75.75 0 01-1.5 0v-5A.75.75 0 017 4.75z"/></svg>
+            Launch
+          </a>
+        </div>
+      </div>
+
+      <!-- Reverse Mortgage US -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🏠</div>
+          <div class="card-meta">
+            <div class="card-title">Home Affordability Calculator</div>
+            <div class="card-type">Interactive Tool · US</div>
+          </div>
+        </div>
+        <p class="card-desc">
+          The US version of the affordability calculator — input your income and get the maximum home value you could afford, adapted for the American market.
+        </p>
+        <div class="card-tags">
+          <span class="tag">Finance</span>
+          <span class="tag">Interactive</span>
+          <span class="tag">US</span>
+        </div>
+        <div class="card-links">
+          <a href="https://claude.ai/public/artifacts/801a2ebd-2ec6-4f9d-ac77-b6db5303fedf" target="_blank" rel="noopener" class="link-btn link-btn-primary">Launch</a>
+        </div>
+      </div>
+
+      <!-- Halfway -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🍺</div>
+          <div class="card-meta">
+            <div class="card-title">Halfway — Pub Finder</div>
+            <div class="card-type">Web App · Streamlit</div>
+          </div>
+        </div>
+        <p class="card-desc">
+          Find the temporal midpoint between any number of London locations using real public transport data. Optimises for travel time — not distance — across the tube and bus network, so everyone arrives in roughly the same time.
+        </p>
+        <div class="card-tags">
+          <span class="tag">Streamlit</span>
+          <span class="tag">TfL API</span>
+          <span class="tag">Python</span>
+          <span class="tag">Optimisation</span>
+        </div>
+        <div class="card-links">
+          <a href="https://halfway.streamlit.app/" target="_blank" rel="noopener" class="link-btn link-btn-primary">Launch App</a>
+        </div>
+      </div>
+
+      <!-- Rightmove Analysis -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">📊</div>
+          <div class="card-meta">
+            <div class="card-title">Rightmove Property Analysis</div>
+            <div class="card-type">Notebook · Data Analysis</div>
+          </div>
+        </div>
+        <p class="card-desc">
+          Interactive Jupyter notebook analysing UK property listings scraped from Rightmove. Explores pricing trends, area comparisons, and value-for-money metrics with rich visualisations.
+        </p>
+        <div class="card-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">Plotly</span>
+          <span class="tag">Web Scraping</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/gbiggs31/rightmove-analysis/blob/main/rightmove_analysis_interactive.ipynb" target="_blank" rel="noopener" class="link-btn link-btn-primary">View Notebook</a>
+          <a href="https://github.com/gbiggs31/rightmove-analysis" target="_blank" rel="noopener" class="link-btn link-btn-secondary">GitHub</a>
+        </div>
+      </div>
+
+      <!-- Auto Quiz -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🧠</div>
+          <div class="card-meta">
+            <div class="card-title">Auto Quiz</div>
+            <div class="card-type">Tool · Wikipedia + LLM</div>
+          </div>
+        </div>
+        <p class="card-desc">
+          Automatically generates quiz questions from any Wikipedia article. Pick a topic, get a quiz — no LLMs involved, just Wikipedia's content parsed and turned into trivia.
+        </p>
+        <div class="card-tags">
+          <span class="tag">Wikipedia API</span>
+          <span class="tag">Python</span>
+          <span class="tag">NLP</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/gbiggs31/auto_quiz_3" target="_blank" rel="noopener" class="link-btn link-btn-primary">GitHub</a>
+        </div>
+      </div>
+
+      <!-- ClawdBot -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🤖</div>
+          <div class="card-meta">
+            <div class="card-title">Mini ClawdBot</div>
+            <div class="card-type">LLM · Aggregation & Ensembling</div>
+          </div>
+        </div>
+        <p class="card-desc">
+          A personal Claude-powered bot with LLM response aggregation and ensembling. Queries multiple model calls and combines outputs for more robust, consistent answers.
+        </p>
+        <div class="card-tags">
+          <span class="tag">Claude API</span>
+          <span class="tag">Ensembling</span>
+          <span class="tag">Python</span>
+          <span class="tag">LLM</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/gbiggs31/personal_clawd" target="_blank" rel="noopener" class="link-btn link-btn-primary">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label">About</div>
+        <h2 class="section-title">A bit about me</h2>
+        <p>I'm a data scientist with a passion for building useful things — whether that's a financial model, a geospatial web app, or an LLM-powered tool.</p>
+        <p>I enjoy the full stack of data work: pulling and cleaning data, exploratory analysis, modelling, and shipping something people can actually use.</p>
+        <p>Outside of work I like to spend time on projects that scratch a personal itch — finding the best halfway pub being a prime example.</p>
+      </div>
+      <div>
+        <div class="section-label" style="margin-bottom:1rem;">Skills</div>
+        <div class="skills-list">
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">SQL</span>
+          <span class="skill-chip">Pandas</span>
+          <span class="skill-chip">Scikit-learn</span>
+          <span class="skill-chip">Plotly</span>
+          <span class="skill-chip">Streamlit</span>
+          <span class="skill-chip">LLMs</span>
+          <span class="skill-chip">Claude API</span>
+          <span class="skill-chip">Jupyter</span>
+          <span class="skill-chip">Web Scraping</span>
+          <span class="skill-chip">Geospatial</span>
+          <span class="skill-chip">Data Viz</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Get in touch</h2>
+    <p class="section-sub">Feel free to reach out if you'd like to chat about data, projects, or anything else.</p>
+    <div class="contact-row">
+      <a href="https://github.com/gbiggs31" target="_blank" rel="noopener" class="btn btn-ghost">
+        <svg class="icon" viewBox="0 0 16 16" style="width:16px;height:16px"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/georgebiggs/" target="_blank" rel="noopener" class="btn btn-ghost">
+        <svg class="icon" viewBox="0 0 16 16" style="width:16px;height:16px"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>George Biggs &copy; 2026</p>
+</footer>
+
+</body>
+</html>
