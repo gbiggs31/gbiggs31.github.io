@@ -327,6 +327,48 @@
 
     .link-btn-secondary:hover { color: var(--text); border-color: var(--muted); }
 
+    /* ── ZONE HEADERS ── */
+    .zone {
+      margin-bottom: 3.5rem;
+    }
+
+    .zone-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .zone-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    .zone-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .zone-empty {
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+      padding: 2.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .zone-empty span {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
     /* ── ABOUT ── */
     #about { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
@@ -423,170 +465,201 @@
     <h2 class="section-title">Projects</h2>
     <p class="section-sub">A selection of personal projects spanning finance, LLMs, data analysis, and web apps.</p>
 
-    <div class="projects-grid">
+    <!-- ── ZONE: APPS ── -->
+    <div class="zone">
+      <div class="zone-header">
+        <h3 class="zone-title">Apps</h3>
+        <span class="zone-sub">Deployed tools you can use right now.</span>
+      </div>
+      <div class="projects-grid">
 
-      <!-- Reverse Mortgage UK -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-icon">🏡</div>
-          <div class="card-meta">
-            <div class="card-title">Home Affordability Calculator</div>
-            <div class="card-type">Interactive Tool · UK</div>
+        <!-- Home Affordability UK -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">🏡</div>
+            <div class="card-meta">
+              <div class="card-title">Home Affordability Calculator</div>
+              <div class="card-type">Interactive Tool · UK</div>
+            </div>
+          </div>
+          <p class="card-desc">
+            An interactive calculator that takes your income and works out the maximum home value you could afford to buy. Built for the UK market.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Finance</span>
+            <span class="tag">Interactive</span>
+            <span class="tag">UK</span>
+          </div>
+          <div class="card-links">
+            <a href="https://claude.ai/public/artifacts/eada6160-615e-4038-b1b5-1854b8d9678e" target="_blank" rel="noopener" class="link-btn link-btn-primary">
+              <svg class="icon" viewBox="0 0 16 16"><path d="M8 0a8 8 0 110 16A8 8 0 018 0zm0 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zm1 3.25a.75.75 0 01.75.75v5a.75.75 0 01-1.5 0v-5A.75.75 0 019 4.75zm-2 0a.75.75 0 01.75.75v5a.75.75 0 01-1.5 0v-5A.75.75 0 017 4.75z"/></svg>
+              Launch
+            </a>
           </div>
         </div>
-        <p class="card-desc">
-          An interactive calculator that takes your income and works out the maximum home value you could afford to buy. Built for the UK market.
-        </p>
-        <div class="card-tags">
-          <span class="tag">Finance</span>
-          <span class="tag">Interactive</span>
-          <span class="tag">UK</span>
-        </div>
-        <div class="card-links">
-          <a href="https://claude.ai/public/artifacts/eada6160-615e-4038-b1b5-1854b8d9678e" target="_blank" rel="noopener" class="link-btn link-btn-primary">
-            <svg class="icon" viewBox="0 0 16 16"><path d="M8 0a8 8 0 110 16A8 8 0 018 0zm0 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zm1 3.25a.75.75 0 01.75.75v5a.75.75 0 01-1.5 0v-5A.75.75 0 019 4.75zm-2 0a.75.75 0 01.75.75v5a.75.75 0 01-1.5 0v-5A.75.75 0 017 4.75z"/></svg>
-            Launch
-          </a>
-        </div>
-      </div>
 
-      <!-- Reverse Mortgage US -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-icon">🏠</div>
-          <div class="card-meta">
-            <div class="card-title">Home Affordability Calculator</div>
-            <div class="card-type">Interactive Tool · US</div>
+        <!-- Home Affordability US -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">🏠</div>
+            <div class="card-meta">
+              <div class="card-title">Home Affordability Calculator</div>
+              <div class="card-type">Interactive Tool · US</div>
+            </div>
+          </div>
+          <p class="card-desc">
+            The US version of the affordability calculator — input your income and get the maximum home value you could afford, adapted for the American market.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Finance</span>
+            <span class="tag">Interactive</span>
+            <span class="tag">US</span>
+          </div>
+          <div class="card-links">
+            <a href="https://claude.ai/public/artifacts/801a2ebd-2ec6-4f9d-ac77-b6db5303fedf" target="_blank" rel="noopener" class="link-btn link-btn-primary">Launch</a>
           </div>
         </div>
-        <p class="card-desc">
-          The US version of the affordability calculator — input your income and get the maximum home value you could afford, adapted for the American market.
-        </p>
-        <div class="card-tags">
-          <span class="tag">Finance</span>
-          <span class="tag">Interactive</span>
-          <span class="tag">US</span>
-        </div>
-        <div class="card-links">
-          <a href="https://claude.ai/public/artifacts/801a2ebd-2ec6-4f9d-ac77-b6db5303fedf" target="_blank" rel="noopener" class="link-btn link-btn-primary">Launch</a>
-        </div>
-      </div>
 
-      <!-- Halfway -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-icon">🍺</div>
-          <div class="card-meta">
-            <div class="card-title">Halfway — Pub Finder</div>
-            <div class="card-type">Web App · Streamlit</div>
+        <!-- Halfway -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">🍺</div>
+            <div class="card-meta">
+              <div class="card-title">Halfway — Pub Finder</div>
+              <div class="card-type">Web App · Streamlit</div>
+            </div>
+          </div>
+          <p class="card-desc">
+            Find the temporal midpoint between any number of London locations using real public transport data. Optimises for travel time — not distance — across the tube and bus network, so everyone arrives in roughly the same time.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Streamlit</span>
+            <span class="tag">TfL API</span>
+            <span class="tag">Python</span>
+            <span class="tag">Optimisation</span>
+          </div>
+          <div class="card-links">
+            <a href="https://halfway.streamlit.app/" target="_blank" rel="noopener" class="link-btn link-btn-primary">Launch App</a>
           </div>
         </div>
-        <p class="card-desc">
-          Find the temporal midpoint between any number of London locations using real public transport data. Optimises for travel time — not distance — across the tube and bus network, so everyone arrives in roughly the same time.
-        </p>
-        <div class="card-tags">
-          <span class="tag">Streamlit</span>
-          <span class="tag">TfL API</span>
-          <span class="tag">Python</span>
-          <span class="tag">Optimisation</span>
-        </div>
-        <div class="card-links">
-          <a href="https://halfway.streamlit.app/" target="_blank" rel="noopener" class="link-btn link-btn-primary">Launch App</a>
-        </div>
-      </div>
 
-      <!-- Rightmove Analysis -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-icon">📊</div>
-          <div class="card-meta">
-            <div class="card-title">Rightmove Property Analysis</div>
-            <div class="card-type">Notebook · Data Analysis</div>
+        <!-- World Coverage Calculator -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">🌍</div>
+            <div class="card-meta">
+              <div class="card-title">World Coverage Calculator</div>
+              <div class="card-type">Interactive Tool · Geography</div>
+            </div>
+          </div>
+          <p class="card-desc">
+            Calculate what percentage of the world's land you've visited by entering the cities you've been to. A simple way to visualise how much of the globe you've actually explored.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Geography</span>
+            <span class="tag">Interactive</span>
+            <span class="tag">Travel</span>
+          </div>
+          <div class="card-links">
+            <a href="https://world.biggsdata.com" target="_blank" rel="noopener" class="link-btn link-btn-primary">Launch App</a>
           </div>
         </div>
-        <p class="card-desc">
-          Interactive Jupyter notebook analysing UK property listings scraped from Rightmove. Explores pricing trends, area comparisons, and value-for-money metrics with rich visualisations.
-        </p>
-        <div class="card-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Pandas</span>
-          <span class="tag">Plotly</span>
-          <span class="tag">Web Scraping</span>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/gbiggs31/rightmove-analysis/blob/main/rightmove_analysis_interactive.ipynb" target="_blank" rel="noopener" class="link-btn link-btn-primary">View Notebook</a>
-          <a href="https://github.com/gbiggs31/rightmove-analysis" target="_blank" rel="noopener" class="link-btn link-btn-secondary">GitHub</a>
-        </div>
-      </div>
 
-      <!-- Auto Quiz -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-icon">🧠</div>
-          <div class="card-meta">
-            <div class="card-title">Auto Quiz</div>
-            <div class="card-type">Tool · Wikipedia + LLM</div>
-          </div>
-        </div>
-        <p class="card-desc">
-          Automatically generates quiz questions from any Wikipedia article. Pick a topic, get a quiz — no LLMs involved, just Wikipedia's content parsed and turned into trivia.
-        </p>
-        <div class="card-tags">
-          <span class="tag">Wikipedia API</span>
-          <span class="tag">Python</span>
-          <span class="tag">NLP</span>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/gbiggs31/auto_quiz_3" target="_blank" rel="noopener" class="link-btn link-btn-primary">GitHub</a>
-        </div>
       </div>
-
-      <!-- World Coverage Calculator -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-icon">🌍</div>
-          <div class="card-meta">
-            <div class="card-title">World Coverage Calculator</div>
-            <div class="card-type">Interactive Tool · Geography</div>
-          </div>
-        </div>
-        <p class="card-desc">
-          Calculate what percentage of the world's land you've visited by entering the cities you've been to. A simple way to visualise how much of the globe you've actually explored.
-        </p>
-        <div class="card-tags">
-          <span class="tag">Geography</span>
-          <span class="tag">Interactive</span>
-          <span class="tag">Travel</span>
-        </div>
-        <div class="card-links">
-          <a href="https://world.biggsdata.com" target="_blank" rel="noopener" class="link-btn link-btn-primary">Launch App</a>
-        </div>
-      </div>
-
-      <!-- ClawdBot -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-icon">🤖</div>
-          <div class="card-meta">
-            <div class="card-title">Mini ClawdBot</div>
-            <div class="card-type">LLM · Aggregation & Ensembling</div>
-          </div>
-        </div>
-        <p class="card-desc">
-          A personal Claude-powered bot with LLM response aggregation and ensembling. Queries multiple model calls and combines outputs for more robust, consistent answers.
-        </p>
-        <div class="card-tags">
-          <span class="tag">Claude API</span>
-          <span class="tag">Ensembling</span>
-          <span class="tag">Python</span>
-          <span class="tag">LLM</span>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/gbiggs31/personal_clawd" target="_blank" rel="noopener" class="link-btn link-btn-primary">GitHub</a>
-        </div>
-      </div>
-
     </div>
+
+    <!-- ── ZONE: CODE ── -->
+    <div class="zone">
+      <div class="zone-header">
+        <h3 class="zone-title">Code</h3>
+        <span class="zone-sub">Open-source repos and notebooks.</span>
+      </div>
+      <div class="projects-grid">
+
+        <!-- Rightmove Analysis -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">📊</div>
+            <div class="card-meta">
+              <div class="card-title">Rightmove Property Analysis</div>
+              <div class="card-type">Notebook · Data Analysis</div>
+            </div>
+          </div>
+          <p class="card-desc">
+            Interactive Jupyter notebook analysing UK property listings scraped from Rightmove. Explores pricing trends, area comparisons, and value-for-money metrics with rich visualisations.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Plotly</span>
+            <span class="tag">Web Scraping</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/gbiggs31/rightmove-analysis/blob/main/rightmove_analysis_interactive.ipynb" target="_blank" rel="noopener" class="link-btn link-btn-primary">View Notebook</a>
+            <a href="https://github.com/gbiggs31/rightmove-analysis" target="_blank" rel="noopener" class="link-btn link-btn-secondary">GitHub</a>
+          </div>
+        </div>
+
+        <!-- Auto Quiz -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">🧠</div>
+            <div class="card-meta">
+              <div class="card-title">Auto Quiz</div>
+              <div class="card-type">Tool · Wikipedia + NLP</div>
+            </div>
+          </div>
+          <p class="card-desc">
+            Automatically generates quiz questions from any Wikipedia article. Pick a topic, get a quiz — no LLMs involved, just Wikipedia's content parsed and turned into trivia.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Wikipedia API</span>
+            <span class="tag">Python</span>
+            <span class="tag">NLP</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/gbiggs31/auto_quiz_3" target="_blank" rel="noopener" class="link-btn link-btn-primary">GitHub</a>
+          </div>
+        </div>
+
+        <!-- ClawdBot -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">🤖</div>
+            <div class="card-meta">
+              <div class="card-title">Mini ClawdBot</div>
+              <div class="card-type">LLM · Aggregation & Ensembling</div>
+            </div>
+          </div>
+          <p class="card-desc">
+            A personal Claude-powered bot with LLM response aggregation and ensembling. Queries multiple model calls and combines outputs for more robust, consistent answers.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Claude API</span>
+            <span class="tag">Ensembling</span>
+            <span class="tag">Python</span>
+            <span class="tag">LLM</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/gbiggs31/personal_clawd" target="_blank" rel="noopener" class="link-btn link-btn-primary">GitHub</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── ZONE: IN PROGRESS ── -->
+    <div class="zone">
+      <div class="zone-header">
+        <h3 class="zone-title">In Progress</h3>
+        <span class="zone-sub">Things I'm currently building.</span>
+      </div>
+      <div class="zone-empty">
+        <span>🔧</span>
+        Nothing here yet — check back soon.
+      </div>
+    </div>
+
   </div>
 </section>
 
