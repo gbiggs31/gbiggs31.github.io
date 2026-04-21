@@ -12,7 +12,7 @@
     gtag('js', new Date());
     gtag('config', 'G-X38THFN2BP');
   </script>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236c8eff'/><text x='50' y='68' font-family='system-ui,sans-serif' font-size='48' font-weight='800' fill='white' text-anchor='middle'>GB</text></svg>"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='108' fill='%23090b10'/><g fill='none' stroke='%238df7c0' stroke-width='54' stroke-linecap='round' stroke-linejoin='round'><line x1='256' y1='108' x2='100' y2='420'/><line x1='256' y1='108' x2='412' y2='420'/><line x1='161' y1='272' x2='351' y2='272'/></g></svg>"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -408,6 +408,22 @@
       flex-wrap: wrap;
     }
 
+    /* ── STRAVA CALLOUT ── */
+    .card-strava {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .card-strava svg {
+      flex-shrink: 0;
+      opacity: 0.75;
+    }
+
     /* ── FOOTER ── */
     footer {
       text-align: center;
@@ -574,6 +590,13 @@
           <p class="card-desc">
             An AI gym assistant that lives in Telegram. Log workouts in plain language, pull up exercise history with coaching notes, plan training cycles, and ask questions grounded in your actual data.
           </p>
+          <div class="card-strava">
+            <svg width="16" height="16" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 26l5-10 5 10" fill="none" stroke="#FC4C02" stroke-width="3.5" stroke-linejoin="round"/>
+              <path d="M22 26l3-6 3 6" fill="none" stroke="#FC4C02" stroke-width="3.5" stroke-linejoin="round" opacity="0.6"/>
+            </svg>
+            Sync with Strava — smarter coaching, more context
+          </div>
           <div class="card-tags">
             <span class="tag">Claude API</span>
             <span class="tag">Telegram</span>
