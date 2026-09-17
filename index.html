@@ -4,6 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>George Biggs — Data Scientist</title>
+  <meta name="description" content="Personal projects by George Biggs: useful data tools, geospatial experiments, and web apps. Explore Cityscape, Halfway, and Baby Day." />
+  <link rel="canonical" href="https://biggsdata.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="George Biggs &mdash; Tools, maps &amp; experiments" />
+  <meta property="og:description" content="Data-driven tools and experiments. Explore Cityscape, Halfway, Baby Day, and more." />
+  <meta property="og:url" content="https://biggsdata.com/" />
+  <meta property="og:image" content="https://biggsdata.com/assets/social-preview.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="George Biggs &mdash; data scientist, tools, maps and experiments, with a miniature Caversham landscape" />
+  <meta name="twitter:card" content="summary_large_image" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X38THFN2BP"></script>
   <script>
@@ -457,8 +468,10 @@
       nav ul a { font-size: 0.8rem; }
     }
   </style>
+  <link rel="stylesheet" href="polish.css" />
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- NAV -->
 <nav>
@@ -470,92 +483,67 @@
   </ul>
 </nav>
 
-<!-- HERO -->
+<main id="main">
 <section class="hero" id="home">
+ <div class="hero-layout container">
   <div class="hero-inner">
-    <h1>Hi, I'm <span>George Biggs</span></h1>
-    <p>I build small data-driven tools and experiments. All views my own. Not financial advice.</p>
-    <div style="margin: 1.75rem auto 2rem; text-align:left; display:inline-block;">
-      <div style="font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:0.6rem;">Currently exploring</div>
-      <ul style="list-style:none; display:flex; flex-direction:column; gap:0.5rem;">
-        <li style="display:flex; align-items:center; gap:0.65rem; color:var(--muted); font-size:0.95rem;"><span style="color:var(--accent);">→</span> LLM evaluation and ensembling</li>
-        <li style="display:flex; align-items:center; gap:0.65rem; color:var(--muted); font-size:0.95rem;"><span style="color:var(--accent);">→</span> Applied optimisation problems</li>
-        <li style="display:flex; align-items:center; gap:0.65rem; color:var(--muted); font-size:0.95rem;"><span style="color:var(--accent);">→</span> Housing market data</li>
-      </ul>
-    </div>
-    <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#contact" class="btn btn-ghost">Get in touch</a>
-    </div>
+   <div class="section-label">Data scientist / builder</div>
+   <h1>Hi, I'm <span>George Biggs</span></h1>
+   <p>I build small data-driven tools and experiments.</p>
+   <p class="exploring">Currently exploring LLM evaluation, applied optimisation, and housing market data.</p>
+   <div class="hero-actions"><a href="#projects" class="btn btn-primary">Explore projects <span aria-hidden="true">&#8599;</span></a><a href="#contact" class="btn btn-ghost">Get in touch</a></div>
   </div>
+  <figure class="hero-film" id="caversham-film">
+   <video class="card-video" controls playsinline loop preload="none" poster="assets/cityscape/caversham-poster.jpg" width="1536" height="1024" aria-label="Cityscape: a 12-second animated miniature of Caversham">
+            <source src="assets/cityscape/caversham.mp4" type="video/mp4" />
+            <a href="assets/cityscape/caversham.mp4">Watch the Cityscape animation</a>.
+          </video>
+   <figcaption><div><span class="section-label">Featured &middot; Finished</span><a href="#cityscape">Cityscape: Caversham in miniature <span aria-hidden="true">&#8599;</span></a></div><span class="film-format">12-second animation</span></figcaption>
+  </figure>
+ </div>
 </section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="container">
-    <div class="section-label">Work</div>
-    <h2 class="section-title">Projects</h2>
-    <p class="section-sub">A selection of personal projects spanning finance, LLMs, data analysis, and web apps.</p>
-
-    <!-- ── ZONE: APPS ── -->
-    <div class="zone">
-      <div class="zone-header">
-        <h3 class="zone-title">Apps</h3>
-        <span class="zone-sub">Deployed tools you can use right now.</span>
-      </div>
-      <div class="projects-grid">
-
-        <!-- Home Affordability UK -->
-        <div class="card">
+<section id="projects"><div class="container"><div class="section-label">Selected work</div><h2 class="section-title">Tools, maps &amp; experiments</h2><div class="project-nav"><a href="#featured">Featured</a><a href="#finished">Finished</a><a href="#in-progress">In progress</a></div><div class="zone" id="featured">
+ <div class="zone-header"><h3 class="zone-title">Featured</h3><span class="zone-sub">More to explore alongside Cityscape.</span></div>
+ <div class="featured-grid">
+  <a class="preview-card" href="#halfway">
+   <div class="route-preview" aria-hidden="true"><svg viewBox="0 0 500 130"><path d="M35 35H160L250 90H460 M35 105H150L250 40H460" fill="none" stroke="#8faaff" stroke-width="5"/><path d="M250 15V115" stroke="#b69bfa" stroke-width="5"/><g fill="#1a1d27" stroke="#dce5ff" stroke-width="4"><circle cx="65" cy="35" r="8"/><circle cx="80" cy="105" r="8"/><circle cx="250" cy="90" r="12"/><circle cx="425" cy="40" r="8"/></g></svg><span class="preview-caption">A fairer place to meet</span></div>
+   <div class="preview-copy"><span class="card-type">App &middot; Finished</span><h4>Halfway <span aria-hidden="true">&#8599;</span></h4><p>Find a London pub with a fair journey for everyone.</p></div>
+  </a>
+  <a class="preview-card" href="#baby-day">
+   <div class="calendar-preview" aria-hidden="true"><div class="calendar-top">A day around you <span>Illustrative preview</span></div><div class="calendar-event"><span>09:30</span><b>Baby activities</b><em>Explore</em></div><div class="calendar-event nap"><span>11:00</span><b>Room for a nap</b></div><div class="calendar-event"><span>12:30</span><b>Coffee with friends</b><em>Together</em></div></div>
+   <div class="preview-copy"><span class="card-type">App &middot; In progress &middot; Private pilot</span><h4>Baby Day <span aria-hidden="true">&#8599;</span></h4><p>Local activities, naps, and plans with friends in one place.</p></div>
+  </a>
+ </div>
+</div><div class="zone" id="finished"><div class="zone-header"><h3 class="zone-title">Finished</h3><span class="zone-sub">Apps, code, and creative experiments.</span></div><div class="projects-grid"><article class="card" id="cityscape">
           <div class="card-header">
-            <div class="card-icon">🏡</div>
+            <div class="card-icon" aria-hidden="true">🏙️</div>
             <div class="card-meta">
-              <div class="card-title">Home Affordability Calculator</div>
-              <div class="card-type">Interactive Tool · UK</div>
+              <h4 class="card-title">Cityscape</h4>
+              <div class="card-type">Animation &middot; Finished</div>
             </div>
           </div>
           <p class="card-desc">
-            An interactive calculator that takes your income and works out the maximum home value you could afford to buy. Built for the UK market.
+            A miniature Caversham brought to life with drifting clouds, moving boats, and tiny traffic. A geospatial modelling experiment combining OpenStreetMap and terrain data, Blender, AI-assisted imagery, and Python animation.
           </p>
+
+          <p class="card-note">A stylised visual interpretation: the final film uses layered animation over AI-assisted artwork.</p>
           <div class="card-tags">
-            <span class="tag">Finance</span>
-            <span class="tag">Interactive</span>
-            <span class="tag">UK</span>
+            <span class="tag">Geospatial</span>
+            <span class="tag">Blender</span>
+            <span class="tag">Python</span>
+            <span class="tag">Animation</span>
           </div>
           <div class="card-links">
-            <a href="https://claude.ai/public/artifacts/eada6160-615e-4038-b1b5-1854b8d9678e" target="_blank" rel="noopener" class="link-btn link-btn-primary">Launch App</a>
+            <a href="#caversham-film" class="link-btn link-btn-primary">View Animation</a>
           </div>
-        </div>
-
-        <!-- Home Affordability US -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-icon">🏠</div>
-            <div class="card-meta">
-              <div class="card-title">Home Affordability Calculator</div>
-              <div class="card-type">Interactive Tool · US</div>
-            </div>
-          </div>
-          <p class="card-desc">
-            The US version of the affordability calculator — input your income and get the maximum home value you could afford, adapted for the American market.
-          </p>
-          <div class="card-tags">
-            <span class="tag">Finance</span>
-            <span class="tag">Interactive</span>
-            <span class="tag">US</span>
-          </div>
-          <div class="card-links">
-            <a href="https://claude.ai/public/artifacts/801a2ebd-2ec6-4f9d-ac77-b6db5303fedf" target="_blank" rel="noopener" class="link-btn link-btn-primary">Launch App</a>
-          </div>
-        </div>
-
-        <!-- Halfway -->
-        <div class="card">
+          <p class="card-note">Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>, ODbL. Terrain © Environment Agency 2022, <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank" rel="noopener">Open Government Licence</a>.</p>
+        </article>
+<div class="card" id="halfway">
           <div class="card-header">
             <div class="card-icon">🍺</div>
             <div class="card-meta">
-              <div class="card-title">Halfway — Pub Finder</div>
-              <div class="card-type">Web App · Streamlit</div>
+              <h4 class="card-title">Halfway — Pub Finder</h4>
+              <div class="card-type">App &middot; Streamlit</div>
             </div>
           </div>
           <p class="card-desc">
@@ -571,14 +559,34 @@
             <a href="https://halfway.streamlit.app/" target="_blank" rel="noopener" class="link-btn link-btn-primary">Launch App</a>
           </div>
         </div>
-
-        <!-- World Coverage Calculator -->
-        <div class="card">
+<div class="card">
+          <div class="card-header">
+            <div class="card-icon">🏡</div>
+            <div class="card-meta">
+              <h4 class="card-title">Home Affordability Calculator</h4>
+              <div class="card-type">App &middot; UK + US</div>
+            </div>
+          </div>
+          <p class="card-desc">
+            An interactive calculator that takes your income and works out the maximum home value you could afford to buy. Available in UK and US versions.
+          </p>
+          <p class="card-note">Personal project. Not financial advice.</p>
+<div class="card-tags">
+            <span class="tag">Finance</span>
+            <span class="tag">Interactive</span>
+            <span class="tag">UK + US</span>
+          </div>
+          <div class="card-links">
+            <a href="https://claude.ai/public/artifacts/eada6160-615e-4038-b1b5-1854b8d9678e" target="_blank" rel="noopener" class="link-btn link-btn-primary">UK calculator</a>
+<a href="https://claude.ai/public/artifacts/801a2ebd-2ec6-4f9d-ac77-b6db5303fedf" target="_blank" rel="noopener" class="link-btn link-btn-primary">US calculator</a>
+          </div>
+        </div>
+<div class="card">
           <div class="card-header">
             <div class="card-icon">🌍</div>
             <div class="card-meta">
-              <div class="card-title">World Coverage Calculator</div>
-              <div class="card-type">Interactive Tool · Geography</div>
+              <h4 class="card-title">World Coverage Calculator</h4>
+              <div class="card-type">App &middot; Geography</div>
             </div>
           </div>
           <p class="card-desc">
@@ -593,14 +601,12 @@
             <a href="https://world.biggsdata.com" target="_blank" rel="noopener" class="link-btn link-btn-primary">Launch App</a>
           </div>
         </div>
-
-        <!-- Liftwise -->
-        <div class="card">
+<div class="card">
           <div class="card-header">
             <div class="card-icon">🏋️</div>
             <div class="card-meta">
-              <div class="card-title">Liftwise</div>
-              <div class="card-type">AI Tool · Telegram Bot</div>
+              <h4 class="card-title">Liftwise</h4>
+              <div class="card-type">App &middot; Telegram Bot</div>
             </div>
           </div>
           <p class="card-desc">
@@ -624,14 +630,12 @@
             <a href="https://github.com/gbiggs31/personal_clawd" target="_blank" rel="noopener" class="link-btn link-btn-secondary">GitHub</a>
           </div>
         </div>
-
-        <!-- Coach Aesop -->
-        <div class="card">
+<div class="card">
           <div class="card-header">
             <div class="card-icon">AI</div>
             <div class="card-meta">
-              <div class="card-title">Coach Aesop</div>
-              <div class="card-type">Web App - Career Reflection</div>
+              <h4 class="card-title">Coach Aesop</h4>
+              <div class="card-type">App &middot; Career Reflection</div>
             </div>
           </div>
           <p class="card-desc">
@@ -648,25 +652,12 @@
             <a href="https://github.com/gbiggs31/career_coach" target="_blank" rel="noopener" class="link-btn link-btn-secondary">GitHub</a>
           </div>
         </div>
-
-      </div>
-    </div>
-
-    <!-- ── ZONE: CODE ── -->
-    <div class="zone">
-      <div class="zone-header">
-        <h3 class="zone-title">Code</h3>
-        <span class="zone-sub">Open-source repos and notebooks.</span>
-      </div>
-      <div class="projects-grid">
-
-        <!-- Rightmove Analysis -->
-        <div class="card">
+<div class="card">
           <div class="card-header">
             <div class="card-icon">📊</div>
             <div class="card-meta">
-              <div class="card-title">Rightmove Property Analysis</div>
-              <div class="card-type">Notebook · Data Analysis</div>
+              <h4 class="card-title">Rightmove Property Analysis</h4>
+              <div class="card-type">Code &middot; Data Analysis</div>
             </div>
           </div>
           <p class="card-desc">
@@ -683,14 +674,12 @@
             <a href="https://github.com/gbiggs31/rightmove-analysis" target="_blank" rel="noopener" class="link-btn link-btn-secondary">GitHub</a>
           </div>
         </div>
-
-        <!-- Auto Quiz -->
-        <div class="card">
+<div class="card">
           <div class="card-header">
             <div class="card-icon">🧠</div>
             <div class="card-meta">
-              <div class="card-title">Auto Quiz</div>
-              <div class="card-type">Tool · Wikipedia + NLP</div>
+              <h4 class="card-title">Auto Quiz</h4>
+              <div class="card-type">Code &middot; Wikipedia + NLP</div>
             </div>
           </div>
           <p class="card-desc">
@@ -705,14 +694,12 @@
             <a href="https://github.com/gbiggs31/auto_quiz_3" target="_blank" rel="noopener" class="link-btn link-btn-primary">GitHub</a>
           </div>
         </div>
-
-        <!-- ClawdBot -->
-        <div class="card">
+<div class="card">
           <div class="card-header">
             <div class="card-icon">🤖</div>
             <div class="card-meta">
-              <div class="card-title">Mini ClawdBot</div>
-              <div class="card-type">LLM · Aggregation & Ensembling</div>
+              <h4 class="card-title">Mini ClawdBot</h4>
+              <div class="card-type">Code &middot; Aggregation &amp; Ensembling</div>
             </div>
           </div>
           <p class="card-desc">
@@ -727,66 +714,12 @@
           <div class="card-links">
             <a href="https://github.com/gbiggs31/personal_clawd" target="_blank" rel="noopener" class="link-btn link-btn-primary">GitHub</a>
           </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ── ZONE: FINISHED ── -->
-    <div class="zone" id="finished">
-      <div class="zone-header">
-        <h3 class="zone-title">Finished</h3>
-        <span class="zone-sub">Completed experiments and creative projects.</span>
-      </div>
-      <div class="projects-grid">
-
-        <!-- Cityscape -->
-        <article class="card" id="cityscape">
-          <div class="card-header">
-            <div class="card-icon" aria-hidden="true">🏙️</div>
-            <div class="card-meta">
-              <h4 class="card-title">Cityscape</h4>
-              <div class="card-type">Finished · Animated Caversham Diorama</div>
-            </div>
-          </div>
-          <p class="card-desc">
-            A miniature Caversham brought to life with drifting clouds, moving boats, and tiny traffic. A geospatial modelling experiment combining OpenStreetMap and terrain data, Blender, AI-assisted imagery, and Python animation.
-          </p>
-          <video class="card-video" controls playsinline loop preload="metadata" width="1536" height="1024" aria-label="Cityscape: a 12-second animated miniature of Caversham">
-            <source src="assets/cityscape/caversham.mp4" type="video/mp4" />
-            <a href="assets/cityscape/caversham.mp4">Watch the Cityscape animation</a>.
-          </video>
-          <p class="card-note">A stylised visual interpretation: the final film uses layered animation over AI-assisted artwork.</p>
-          <div class="card-tags">
-            <span class="tag">Geospatial</span>
-            <span class="tag">Blender</span>
-            <span class="tag">Python</span>
-            <span class="tag">Animation</span>
-          </div>
-          <div class="card-links">
-            <a href="assets/cityscape/caversham.mp4" target="_blank" rel="noopener" class="link-btn link-btn-primary">View Animation</a>
-          </div>
-          <p class="card-note">Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>, ODbL. Terrain © Environment Agency 2022, <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank" rel="noopener">Open Government Licence</a>.</p>
-        </article>
-
-      </div>
-    </div>
-
-    <!-- ── ZONE: IN PROGRESS ── -->
-    <div class="zone" id="in-progress">
-      <div class="zone-header">
-        <h3 class="zone-title">In Progress</h3>
-        <span class="zone-sub">Things I'm currently building.</span>
-      </div>
-      <div class="projects-grid">
-
-        <!-- Baby Day -->
-        <article class="card" id="baby-day">
+        </div></div></div><div class="zone" id="in-progress"><div class="zone-header"><h3 class="zone-title">In Progress</h3><span class="zone-sub">Things I'm currently building.</span></div><div class="projects-grid"><article class="card" id="baby-day">
           <div class="card-header">
             <div class="card-icon" aria-hidden="true">🍼</div>
             <div class="card-meta">
               <h4 class="card-title">Baby Day</h4>
-              <div class="card-type">In Progress · Private Group Calendar</div>
+              <div class="card-type">App &middot; In progress &middot; Private group calendar</div>
             </div>
           </div>
           <p class="card-desc">
@@ -803,13 +736,11 @@
           </div>
           <p class="card-note">Invite-only pilot. Sign-in and existing access are required.</p>
         </article>
-
-        <!-- Job Hunter -->
-        <div class="card">
+<div class="card">
           <div class="card-header">
             <div class="card-icon">🎯</div>
             <div class="card-meta">
-              <div class="card-title">Job Hunter</div>
+              <h4 class="card-title">Job Hunter</h4>
               <div class="card-type">Tool · Job Search Automation</div>
             </div>
           </div>
@@ -825,14 +756,7 @@
           <div class="card-links">
             <a href="https://github.com/gbiggs31/job_hunter" target="_blank" rel="noopener" class="link-btn link-btn-primary">GitHub</a>
           </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
+        </div></div></div></div></section>
 <!-- ABOUT -->
 <section id="about">
   <div class="container">
@@ -884,6 +808,7 @@
   </div>
 </section>
 
+</main>
 <footer>
   <p>George Biggs &copy; 2026</p>
 </footer>
