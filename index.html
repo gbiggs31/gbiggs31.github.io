@@ -296,6 +296,22 @@
       flex-wrap: wrap;
     }
 
+    .card-video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      border-radius: 8px;
+      background: #10121a;
+    }
+
+    .card-note {
+      color: var(--muted);
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .card-note a { color: var(--tag-text); }
+
     .link-btn {
       display: inline-flex;
       align-items: center;
@@ -716,13 +732,77 @@
       </div>
     </div>
 
+    <!-- ── ZONE: FINISHED ── -->
+    <div class="zone" id="finished">
+      <div class="zone-header">
+        <h3 class="zone-title">Finished</h3>
+        <span class="zone-sub">Completed experiments and creative projects.</span>
+      </div>
+      <div class="projects-grid">
+
+        <!-- Cityscape -->
+        <article class="card" id="cityscape">
+          <div class="card-header">
+            <div class="card-icon" aria-hidden="true">🏙️</div>
+            <div class="card-meta">
+              <h4 class="card-title">Cityscape</h4>
+              <div class="card-type">Finished · Animated Caversham Diorama</div>
+            </div>
+          </div>
+          <p class="card-desc">
+            A miniature Caversham brought to life with drifting clouds, moving boats, and tiny traffic. A geospatial modelling experiment combining OpenStreetMap and terrain data, Blender, AI-assisted imagery, and Python animation.
+          </p>
+          <video class="card-video" controls playsinline loop preload="metadata" width="1536" height="1024" aria-label="Cityscape: a 12-second animated miniature of Caversham">
+            <source src="assets/cityscape/caversham.mp4" type="video/mp4" />
+            <a href="assets/cityscape/caversham.mp4">Watch the Cityscape animation</a>.
+          </video>
+          <p class="card-note">A stylised visual interpretation: the final film uses layered animation over AI-assisted artwork.</p>
+          <div class="card-tags">
+            <span class="tag">Geospatial</span>
+            <span class="tag">Blender</span>
+            <span class="tag">Python</span>
+            <span class="tag">Animation</span>
+          </div>
+          <div class="card-links">
+            <a href="assets/cityscape/caversham.mp4" target="_blank" rel="noopener" class="link-btn link-btn-primary">View Animation</a>
+          </div>
+          <p class="card-note">Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>, ODbL. Terrain © Environment Agency 2022, <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank" rel="noopener">Open Government Licence</a>.</p>
+        </article>
+
+      </div>
+    </div>
+
     <!-- ── ZONE: IN PROGRESS ── -->
-    <div class="zone">
+    <div class="zone" id="in-progress">
       <div class="zone-header">
         <h3 class="zone-title">In Progress</h3>
         <span class="zone-sub">Things I'm currently building.</span>
       </div>
       <div class="projects-grid">
+
+        <!-- Baby Day -->
+        <article class="card" id="baby-day">
+          <div class="card-header">
+            <div class="card-icon" aria-hidden="true">🍼</div>
+            <div class="card-meta">
+              <h4 class="card-title">Baby Day</h4>
+              <div class="card-type">In Progress · Private Group Calendar</div>
+            </div>
+          </div>
+          <p class="card-desc">
+            A shared calendar for a small group of parents in Caversham. Automatically brings together local baby-friendly activities, shows which friends are going, and helps fit plans around naps, with space to arrange coffee and walks together.
+          </p>
+          <div class="card-tags">
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Cloudflare D1</span>
+            <span class="tag">Automation</span>
+          </div>
+          <div class="card-links">
+            <a href="https://baby-day-local-circle.woolly-peony-0283.chatgpt.site" target="_blank" rel="noopener" class="link-btn link-btn-primary">Open Private Prototype</a>
+          </div>
+          <p class="card-note">Invite-only pilot. Sign-in and existing access are required.</p>
+        </article>
 
         <!-- Job Hunter -->
         <div class="card">
