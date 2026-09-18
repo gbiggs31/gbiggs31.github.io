@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>George Biggs — Data Scientist</title>
-  <meta name="description" content="Personal projects by George Biggs: useful data tools, geospatial experiments, and web apps. Explore Cityscape, Halfway, and Baby Day." />
+  <meta name="description" content="Personal projects by George Biggs: Avenra, an AI gym log and training assistant, plus useful data tools, geospatial experiments, and web apps." />
   <link rel="canonical" href="https://biggsdata.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="George Biggs &mdash; Tools, maps &amp; experiments" />
-  <meta property="og:description" content="Data-driven tools and experiments. Explore Cityscape, Halfway, Baby Day, and more." />
+  <meta property="og:description" content="Explore Avenra, an AI gym log and training assistant, alongside Cityscape, Halfway, and more projects by George Biggs." />
   <meta property="og:url" content="https://biggsdata.com/" />
   <meta property="og:image" content="https://biggsdata.com/assets/social-preview.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -492,6 +492,7 @@
    <p>I build small data-driven tools and experiments.</p>
    <p class="exploring">Currently exploring LLM evaluation, applied optimisation, and housing market data.</p>
    <div class="hero-actions"><a href="#projects" class="btn btn-primary">Explore projects <span aria-hidden="true">&#8599;</span></a><a href="#contact" class="btn btn-ghost">Get in touch</a></div>
+   <p class="hero-project">Currently building <a href="#avenra">Avenra <span aria-hidden="true">&rarr;</span></a> &mdash; talk to your gym log.</p>
   </div>
   <figure class="hero-film" id="caversham-film">
    <video class="card-video" controls playsinline loop preload="none" poster="assets/cityscape/caversham-poster.jpg" width="1536" height="1024" aria-label="Cityscape: a 12-second animated miniature of Caversham">
@@ -503,8 +504,25 @@
  </div>
 </section>
 <section id="projects"><div class="container"><div class="section-label">Selected work</div><h2 class="section-title">Tools, maps &amp; experiments</h2><div class="project-nav"><a href="#featured">Featured</a><a href="#finished">Finished</a><a href="#in-progress">In progress</a></div><div class="zone" id="featured">
- <div class="zone-header"><h3 class="zone-title">Featured</h3><span class="zone-sub">More to explore alongside Cityscape.</span></div>
+ <div class="zone-header"><h3 class="zone-title">Featured</h3><span class="zone-sub">A few projects to start with.</span></div>
  <div class="featured-grid">
+  <article class="avenra-feature" id="avenra" aria-labelledby="avenra-title">
+   <div class="avenra-copy">
+    <span class="section-label">AI training assistant &middot; Private alpha</span>
+    <h4 id="avenra-title">Avenra</h4>
+    <p class="avenra-tagline">Talk to your gym log.</p>
+    <p class="card-desc">Log workouts in plain language, track your progress, and ask training questions grounded in your own history. Avenra turns your messages into structured sets, reps, and loads, with coaching that remembers the context.</p>
+    <div class="card-tags"><span class="tag">Natural-language logging</span><span class="tag">Training history</span><span class="tag">Strava sync</span></div>
+    <div class="card-links"><a href="https://avenra.biggsdata.com/" target="_blank" rel="noopener" class="btn btn-primary">Request access <span aria-hidden="true">&#8599;</span></a><a href="https://github.com/gbiggs31/personal_clawd" target="_blank" rel="noopener" class="link-btn link-btn-secondary">GitHub</a></div>
+    <p class="card-note">Previously Liftwise. Currently in private alpha via Telegram.</p>
+   </div>
+   <div class="avenra-preview" aria-label="Illustrative workout logging example">
+    <div class="avenra-preview-heading">From a message to a training log<span>Illustrative example</span></div>
+    <p class="avenra-message">Bench press 60kg for 8, 8, 6. RPE 8.</p>
+    <div class="avenra-log"><span class="section-label">Workout logged</span><p>Bench press</p><dl><div><dt>Weight</dt><dd>60 kg</dd></div><div><dt>Reps</dt><dd>8 / 8 / 6</dd></div><div><dt>Effort</dt><dd>RPE 8</dd></div></dl></div>
+    <p class="card-note">Less time logging. More context for your next session.</p>
+   </div>
+  </article>
   <a class="preview-card" href="#halfway">
    <div class="route-preview" aria-hidden="true"><svg viewBox="0 0 500 130"><path d="M35 35H160L250 90H460 M35 105H150L250 40H460" fill="none" stroke="#8faaff" stroke-width="5"/><path d="M250 15V115" stroke="#b69bfa" stroke-width="5"/><g fill="#1a1d27" stroke="#dce5ff" stroke-width="4"><circle cx="65" cy="35" r="8"/><circle cx="80" cy="105" r="8"/><circle cx="250" cy="90" r="12"/><circle cx="425" cy="40" r="8"/></g></svg><span class="preview-caption">A fairer place to meet</span></div>
    <div class="preview-copy"><span class="card-type">App &middot; Finished</span><h4>Halfway <span aria-hidden="true">&#8599;</span></h4><p>Find a London pub with a fair journey for everyone.</p></div>
@@ -599,35 +617,6 @@
           </div>
           <div class="card-links">
             <a href="https://world.biggsdata.com" target="_blank" rel="noopener" class="link-btn link-btn-primary">Launch App</a>
-          </div>
-        </div>
-<div class="card">
-          <div class="card-header">
-            <div class="card-icon">🏋️</div>
-            <div class="card-meta">
-              <h4 class="card-title">Liftwise</h4>
-              <div class="card-type">App &middot; Telegram Bot</div>
-            </div>
-          </div>
-          <p class="card-desc">
-            An AI gym assistant that lives in Telegram. Log workouts in plain language, pull up exercise history with coaching notes, plan training cycles, and ask questions grounded in your actual data.
-          </p>
-          <div class="card-strava">
-            <svg width="16" height="16" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17 26l5-10 5 10" fill="none" stroke="#FC4C02" stroke-width="3.5" stroke-linejoin="round"/>
-              <path d="M22 26l3-6 3 6" fill="none" stroke="#FC4C02" stroke-width="3.5" stroke-linejoin="round" opacity="0.6"/>
-            </svg>
-            Sync with Strava — smarter coaching, more context
-          </div>
-          <div class="card-tags">
-            <span class="tag">Claude API</span>
-            <span class="tag">Telegram</span>
-            <span class="tag">Python</span>
-            <span class="tag">Google Sheets</span>
-          </div>
-          <div class="card-links">
-            <a href="https://liftwise.biggsdata.com" target="_blank" rel="noopener" class="link-btn link-btn-primary">Learn More</a>
-            <a href="https://github.com/gbiggs31/personal_clawd" target="_blank" rel="noopener" class="link-btn link-btn-secondary">GitHub</a>
           </div>
         </div>
 <div class="card">

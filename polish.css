@@ -26,6 +26,28 @@ section { padding: 4rem 2rem; }
 .project-nav a { padding: .5rem 1rem; color: var(--text); text-decoration: none; border: 1px solid var(--border); border-radius: 30px; font-size: .9rem; }
 .project-nav a:hover { background: var(--surface2); border-color: var(--accent); }
 .featured-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.5rem; }
+.hero p.hero-project { margin: 1.4rem 0 0; font-size: .9rem; }
+.hero-project a { color: var(--text); text-underline-offset: 4px; }
+.avenra-feature { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2.5rem; align-items: center; padding: 2rem; border: 1px solid #506494; border-radius: 14px; background: linear-gradient(120deg, #202a42, var(--surface) 70%); }
+.avenra-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; min-width: 0; }
+.avenra-copy .section-label { margin: 0; }
+.avenra-copy h4 { font-size: 2rem; line-height: 1.1; letter-spacing: -.035em; }
+.avenra-tagline { font-size: 1.25rem; }
+.avenra-feature .card-links { margin-top: .25rem; }
+.avenra-preview { min-width: 0; padding: 1.5rem; border: 1px solid var(--border); border-radius: 12px; background: #101620; }
+.avenra-preview-heading { font-size: .9rem; font-weight: 600; }
+.avenra-preview-heading span { display: block; margin-top: .25rem; color: var(--muted); font-size: .75rem; font-weight: 400; }
+.avenra-message { margin: 1.25rem 0 1rem 1.5rem; padding: .9rem 1rem; border-radius: 12px 12px 2px 12px; background: #303e60; font-size: .95rem; }
+.avenra-log { padding: 1.1rem; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+.avenra-log > p { font-weight: 600; margin: .35rem 0 1rem; }
+.avenra-log dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; }
+.avenra-log dt { color: var(--muted); font-size: .75rem; }
+.avenra-log dd { font-size: .9rem; font-weight: 600; margin-top: .25rem; }
+.avenra-preview > .card-note { margin-top: 1rem; }
+@media (max-width: 760px) {
+  .avenra-feature { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.25rem; }
+  .avenra-preview { padding: 1rem; }
+}
 .preview-card { overflow: hidden; color: var(--text); text-decoration: none; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; transition: border-color .2s, transform .2s; }
 .preview-card:hover { border-color: var(--accent); transform: translateY(-3px); }
 .route-preview, .calendar-preview { height: 210px; background: #1c253a; padding: 1.5rem; }
