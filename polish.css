@@ -70,6 +70,8 @@ section { padding: 4rem 2rem; }
 .card-title { font-size: 1.1rem; }
 .card-type, .tag, .card-note, .card-strava, footer { font-size: .85rem; }
 .card-desc { font-size: .95rem; }
+.card > .card-desc { flex: none; }
+.card > .card-tags { margin-top: auto; }
 .link-btn { font-size: .9rem; min-height: 44px; display: inline-flex; align-items: center; }
 .card-links { flex-wrap: wrap; }
 .zone-sub { font-size: .95rem; }
