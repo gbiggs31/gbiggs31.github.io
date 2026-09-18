@@ -75,6 +75,8 @@ section { padding: 4rem 2rem; }
 .zone-sub { font-size: .95rem; }
 .skill-chip { font-size: .9rem; }
 .btn-primary, .link-btn-primary { color: #0f172e; font-weight: 700; }
+.link-btn-primary { background: #8faaff; border-color: #8faaff; }
+.link-btn-primary:hover { background: #b3c5ff; border-color: #b3c5ff; color: #0f172e; }
 .btn { min-height: 44px; }
 @media (max-width: 900px) {
   .hero-layout { grid-template-columns: 1fr; gap: 2rem; }
